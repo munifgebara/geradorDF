@@ -11,6 +11,10 @@ function corrigeTipo(f) {
     if (f.type == "datetime") {
         return "string";
     }
+    if (f.type == "text") {
+        return "string";
+    }
+
     return f.type;
 }
 
@@ -319,7 +323,7 @@ function geraCrud(schema) {
 
 }
 
-request(`http://18.232.51.153/api/v2/pietra/_schema/GrupoDePessoas?api_key=36fda24fe5588fa4285ac6c6c2fdfbdb6b6bc9834699774c9bf777f706d05a88`, { json: true }, (err, res, body) => {
+request(`http://18.232.51.153/api/v2/pietra/_schema/LocalEvento?api_key=36fda24fe5588fa4285ac6c6c2fdfbdb6b6bc9834699774c9bf777f706d05a88`, { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
     geraCrud(body);
 });
